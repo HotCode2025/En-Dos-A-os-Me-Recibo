@@ -84,3 +84,45 @@ for i in rango:
 print('Rango con valores de inicio = 3, fin = 10, incremento =2 ')
 for i in range(3,11,2):
     print(i)
+
+
+# definimos una tupla
+cocina = ('chuchara' , 'cuchillo', 'tenedor')
+print(len(cocina))
+
+# Acceder a un elemento, para esto utilizamos corchetes no paratensis
+print(cocina[0])
+
+#mostrar de manera inversa
+print(cocina[-1])
+
+#acceder a un rango
+print(cocina[0:2])
+
+#Ejemplo
+verduras = ('papa', ) # Una tupla necesita aunque sea un elemento la coma
+# de lo contrario solo seria un tipo string cadena
+
+#recorremos los elementos de la tupla
+for cocinar in cocina:
+    print(cocinar, end= ' ') #Print esta usando \n para saltos de linea
+    #y= Usamos end para eliminar los saltos de linea
+
+cocinaLista = list(cocina)
+cocinaLista[0] = 'plato'
+cocina = tuple(cocinaLista)
+print('\n', cocina)
+
+# del cocina
+
+# Dada la siguiente tupla
+tupla = (13, 1,8,3,2,5,8) #definimos la tupla
+#crear una lista que solo incluya los numeros menores a 5
+# e imprima por consola [1,3,2]
+
+lista= [] #definimos la lista
+#filtramos los elementos menos a 5 de la tupla
+for elemento in tupla:
+    if elemento <5:
+        lista.append(elemento)
+print(lista)
