@@ -11,7 +11,7 @@ ProgramacionII/
 │── Python/
 │   ├── Leccio01/
 │   │   ├── Clase01.py
-│   │   └── Ejercicios1.py
+│   │   └── Ejercicios01.py
 │   ├── Leccion02/
 │   │   ├── Clase02.py
 │   │   └── Ejercicios02.py
