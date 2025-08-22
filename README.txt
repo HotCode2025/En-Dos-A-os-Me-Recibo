@@ -21,7 +21,9 @@ ProgramacionII/
 │   │   ├── Clase01.java
 │   │   └── Ejercicios01java
 │   ├── Leccion02/
-│   │   ├── Clase02.java
+│   │   ├── Clases/                              #Chicos este es un ejemplo de como subir un archivo cuando utilizamos Clases en Java
+│   │   │   ├── Persona.java
+│   │   ├── Leccion02.java
 │   │   └── Ejercicios02.java
 │
 │── JavaScript/
