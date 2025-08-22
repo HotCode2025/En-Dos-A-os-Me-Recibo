@@ -32,20 +32,13 @@ ProgramacionII/
 │   │   ├── Clase02.js
 │   │   └── Ejercicios02.js
 │
-│── gitCapture/
-│   ├──  Python
-│   |    ├── Clase01/
-|   |    |     ├── imgCapture
-│   │    ├── Clase02/
-|   |    |     ├── imgCapture
-│   ├──  JavaScript
-│   |    ├── Clase01/
-|   |    |     ├── imgCapture
-│   │    ├── Clase02/
-|   |    |     ├── imgCapture
-│   ├──  Java
-│   |    ├── Clase01/
-|   |    |     ├── imgCapture
-│   │    ├── Clase02/
-|   |    |     ├── imgCapture
+│
+│── ClassGit/
+│   ├── Readme.txt
+│   
+│
+│── Proyecto/
+│   ├──
+│
+
 │── README.md
