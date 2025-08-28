@@ -13,3 +13,11 @@ Este directorio contiene los ejercicios de la materia de Programación II (Lunes
 
 -   **Archivos:** `leccion2.py`
 -   **Descripción:** Ejercicios de colecciones parte 2, listas, tuplas y diccionarios.
+
+### Lección 3
+
+-   **Archivos:** `leccion3.py`
+-   **Descripción:** Repaso de conjuntos, diccionarios y listas.
+
+
+
