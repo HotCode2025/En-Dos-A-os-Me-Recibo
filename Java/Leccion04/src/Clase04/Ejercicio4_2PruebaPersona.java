@@ -16,5 +16,10 @@ public class Ejercicio4_2PruebaPersona {
        //Imprimimos los objetos, lo que obtenemos es su dirección en memoria
        System.err.println("Persona1 = " + persona1 );
        System.out.println("Persona2 = " + persona2);
+       
+       //le pasamos valores a los atributos del objeto persona2
+       persona2.nombre = "Marcos";
+       persona2.apellido = "Homola";
+       persona2.obtenerInformacion();
    } 
 }
