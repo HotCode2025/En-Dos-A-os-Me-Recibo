@@ -21,3 +21,7 @@ Este directorio contiene los ejercicios de la materia de Programación II (Lunes
 
 ### Leccion 4
 
+### Lección 6
+
+-   **Archivos:** `Persona.py` `diagramaUml.uxf`
+-   **Descripción:** Comenzamos con Programación Orientada a Objetos.
