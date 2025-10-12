@@ -1,5 +1,6 @@
 package sistemaventas;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -32,11 +33,11 @@ public class SistemaVentas {
                 case 1:
                     agregarProducto();
                     break;
-                case 2: 
-                    realizarVenta(); 
+                case 2:
+                    realizarVenta();
                     break;
-                case 3: 
-                    listarProductos(); 
+                case 3:
+                    listarProductos();
                     break;
                 default:
                     System.out.println("Opción incorrecta");
@@ -44,15 +45,57 @@ public class SistemaVentas {
         } while (opcion != 4);
     }
 
+    //Método para añadir un nuevo producto
     private void agregarProducto() {
-        System.out.println("Método para añadir un nuevo producto");
+        String continuar = "S";
+        while (continuar.equalsIgnoreCase("S")) {
+            System.out.print("Ingrese descripcion del producto: ");
+            String descripcion = scanner.nextLine();
+            System.out.print("Ingrese el precio: ");
+            double precio = scanner.nextDouble();
+            scanner.nextLine();
+            inventario.agregarProducto(descripcion, precio);
+            System.out.print("¿Desea agregar otro producto? (S/N): ");
+            continuar = scanner.nextLine();
+        }
     }
 
     private void realizarVenta() {
-        System.out.println("Método para realizar una nuevo venta");
+        double totalVenta = 0;
+        String continuar = "S";
+        ArrayList<Producto> productos = new ArrayList<>();
+        while (continuar.equalsIgnoreCase("S")) {
+            System.out.print("Ingrese descripcion del producto a vender: ");
+            String descripcionProducto = scanner.nextLine();
+            Producto producto = inventario.buscarProducto(descripcionProducto);
+            if (producto != null) {
+                System.out.print("Ingrese cantidad vendida: ");
+                int cantidad = scanner.nextInt();
+                producto.setCantidadVendida(cantidad + producto.getCantidadVendida());
+                scanner.nextLine();
+                productos.add(producto);
+            } else {
+                System.out.println("El producto no esta disponible.");
+            }
+
+            System.out.print("¿Desea vender otro producto? (S/N): ");
+            continuar = scanner.nextLine();
+        }
+
+        System.out.printf("%-15s %10s %10s %12s%n", "DETALLE", "CANTIDAD", "PRECIO", "SUBTOTAL");
+        for (Producto producto : productos) {
+            int cantidadVendida = producto.getCantidadVendida(); 
+            double subtotal = producto.getPrecio() * cantidadVendida;
+            System.out.printf("%-15s %10d %10.2f %12.2f%n",
+                    producto.getDescripcion(), cantidadVendida, producto.getPrecio(), subtotal);
+            totalVenta = totalVenta + subtotal; 
+        }
+
+        System.out.println("=====================================");
+        System.out.println("TOTAL DE LA VENTA: $" + totalVenta);
     }
-    
-    private void listarProductos(){
+
+    private void listarProductos() {
         System.out.println("Método para listar productos");
     }
 }
