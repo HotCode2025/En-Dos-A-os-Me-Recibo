@@ -1,16 +1,66 @@
 
+import java.util.Scanner;
 import sistemaventas.SistemaVentas;
 
 
 public class Menu {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
-        // TODO code application logic here
-        SistemaVentas sistemaVenta = new SistemaVentas(); 
-        sistemaVenta.iniciar();
+        SistemaVentas sistemaVenta = new SistemaVentas();
+        
+        int opcion = 0;
+        Scanner entrada = new Scanner(System.in);
+
+        while (opcion != 6) {
+                        
+        
+            System.out.println("");
+            System.out.println("\nMenu Principal\n");
+            System.out.println("1. Calculadora");
+            System.out.println("2. Gestor de notas");
+            System.out.println("3. Adivina el numero");
+            System.out.println("4. Sistema de ventas");
+            System.out.println("5. Conversor de unidades");
+            System.out.println("6. Salir");
+            System.out.println("");
+            System.out.println("Digite la opcion deseada: ");
+            opcion = entrada.nextInt();
+       switch (opcion) {
+           case 1:
+               /*Calculadora c = new Calculadora();
+               c.calculadora();*/
+               System.out.println("Calculadora");
+               break;
+           case 2:
+               /*GestorNotas g = new GestorNotas();
+               g.gestor();*/
+               System.out.println("Gestor de notas");
+               break;
+           case 3:
+               /*Adivina n = new Adivina();
+               n.adivina();*/
+               System.out.println("Adivina el numero");
+               break;
+           case 4:
+               //Sistema de ventas
+               sistemaVenta.iniciar();
+               break;
+           case 5:
+               /*Conversor c1 = new Conversor();
+               c1.conversor();*/
+               System.out.println("Conversor de unidades");
+               break;
+           case 6:
+               /*System.exit(0);*/
+               System.out.println("Saliendo");
+               break;
+              default:
+                  System.out.println("Opcion incorrecta");
+                  break;
+           }
+            entrada.close();
+        }
     }
     
 }
