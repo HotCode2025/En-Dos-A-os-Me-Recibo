@@ -27,5 +27,12 @@ public class Inventario {
         productos.add(new Producto(descripcion, precio, 0));
         System.out.println("Producto agregado correctamente.");
     }
+    
+    public ArrayList<Producto> listarProductos() {
+        if(!productos.isEmpty()) {
+           return productos;  
+        }
+        return null; 
+    }
 
 }

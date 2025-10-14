@@ -2,6 +2,7 @@ package sistemaventas;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.IOException;
 
 /**
  *
@@ -42,6 +43,7 @@ public class SistemaVentas {
                 default:
                     System.out.println("Opción incorrecta");
             }
+
         } while (opcion != 4);
     }
 
@@ -84,11 +86,11 @@ public class SistemaVentas {
 
         System.out.printf("%-15s %10s %10s %12s%n", "DETALLE", "CANTIDAD", "PRECIO", "SUBTOTAL");
         for (Producto producto : productos) {
-            int cantidadVendida = producto.getCantidadVendida(); 
+            int cantidadVendida = producto.getCantidadVendida();
             double subtotal = producto.getPrecio() * cantidadVendida;
             System.out.printf("%-15s %10d %10.2f %12.2f%n",
                     producto.getDescripcion(), cantidadVendida, producto.getPrecio(), subtotal);
-            totalVenta = totalVenta + subtotal; 
+            totalVenta = totalVenta + subtotal;
         }
 
         System.out.println("=====================================");
@@ -96,6 +98,20 @@ public class SistemaVentas {
     }
 
     private void listarProductos() {
-        System.out.println("Método para listar productos");
+        ArrayList<Producto> productos = inventario.listarProductos();
+        if (productos != null) {
+            System.out.printf("%-20s %10s%n", "PRODUCTO", "PRECIO");
+            System.out.println("-------------------------------------");
+
+            for (Producto producto : productos) {
+                System.out.printf("%-20s %10.2f%n",
+                        producto.getDescripcion(),
+                        producto.getPrecio());
+            }
+
+        } else {
+            System.out.println("No hay productos");
+        }
+
     }
 }
