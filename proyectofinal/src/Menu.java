@@ -1,4 +1,5 @@
 
+import conversordeunidades.ConversorDeUnidades;
 import java.util.Scanner;
 import sistemaventas.SistemaVentas;
 
@@ -8,13 +9,12 @@ public class Menu {
     
     public static void main(String[] args) {
         SistemaVentas sistemaVenta = new SistemaVentas();
+        ConversorDeUnidades conversorDeUnidades = new ConversorDeUnidades(); 
         
         int opcion = 0;
         Scanner entrada = new Scanner(System.in);
 
         while (opcion != 6) {
-                        
-        
             System.out.println("");
             System.out.println("\nMenu Principal\n");
             System.out.println("1. Calculadora");
@@ -44,12 +44,11 @@ public class Menu {
                break;
            case 4:
                //Sistema de ventas
-               sistemaVenta.iniciar();
+               sistemaVenta.iniciarSistemaVenta();
                break;
            case 5:
-               /*Conversor c1 = new Conversor();
-               c1.conversor();*/
-               System.out.println("Conversor de unidades");
+               //Conversor de unidades
+               conversorDeUnidades.iniciarConversorUnidades();
                break;
            case 6:
                /*System.exit(0);*/

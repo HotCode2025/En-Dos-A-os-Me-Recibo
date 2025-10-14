@@ -17,7 +17,7 @@ public class SistemaVentas {
         scanner = new Scanner(System.in);
     }
 
-    public void iniciar() {
+    public void iniciarSistemaVenta() {
         int opcion;
         do {
             System.out.println("\n===== MENU SISTEMA DE VENTAS =====");
