@@ -1,0 +1,79 @@
+// Ejercicio 1: Función que valide una contraseña 
+// (mínimo 8 caracteres, 1 número, 1 mayúscula)
+
+function validatePassword(password) {
+  // Verificamos que tenga al menos 8 caracteres
+  if (password.length < 8) {
+    return false;
+  }
+
+  // Verificamos si tiene al menos una letra mayúscula
+  const hasUppercase = /[A-Z]/.test(password);
+
+  // Verificamos si tiene al menos un número
+  const hasNumber = /\d/.test(password);
+
+  // Retorna true solo si cumple las dos condiciones
+  return hasUppercase && hasNumber;
+}
+
+// Pruebas
+console.log(validatePassword("Abc12345")); // true → válida
+console.log(validatePassword("weak"));     // false → no válida
+console.log(validatePassword("Password1")); // true → válida
+console.log(validatePassword("clave"));     // false → no válida
+
+// Ejercicio 2: Crear un sistema simple de gestión de tareas
+
+function createTaskManager() {
+  // Lista de tareas (arreglo vacío al inicio)
+  let tasks = [];
+
+  return {
+    // Función para agregar una nueva tarea
+    addTask: function(taskDescription) {
+      const task = {
+        id: tasks.length + 1,
+        description: taskDescription,
+        completed: false
+      };
+      tasks.push(task);
+      console.log(`✅ Tarea agregada: "${task.description}"`);
+    },
+
+    // Función para marcar una tarea como completada
+    completeTask: function(taskId) {
+      const task = tasks.find(t => t.id === taskId);
+      if (task) {
+        task.completed = true;
+        console.log(`🎯 Tarea completada: "${task.description}"`);
+      } else {
+        console.log("⚠️ No se encontró la tarea con ese ID.");
+      }
+    },
+
+    // Función para mostrar la lista de tareas
+    listTasks: function() {
+      console.log("\n📋 Lista de tareas:");
+      if (tasks.length === 0) {
+        console.log("No hay tareas registradas.");
+      } else {
+        tasks.forEach(t => {
+          const estado = t.completed ? "✅ Completada" : "🕓 Pendiente";
+          console.log(`${t.id}. ${t.description} - ${estado}`);
+        });
+      }
+    }
+  };
+}
+
+// Uso:
+const myTasks = createTaskManager();
+
+myTasks.addTask("Aprender JavaScript");
+myTasks.addTask("Hacer ejercicio");
+myTasks.addTask("Leer un libro");
+
+myTasks.listTasks();       // Muestra todas las tareas
+myTasks.completeTask(2);   // Marca la tarea con ID 2 como completada
+myTasks.listTasks();       // Vuelve a mostrar las tareas con su estado actual
