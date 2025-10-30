@@ -2,6 +2,7 @@
 import conversordeunidades.ConversorDeUnidades;
 import java.util.Scanner;
 import sistemaventas.SistemaVentas;
+import calculadora.calculadora;
 
 public class Menu {
 
@@ -26,8 +27,8 @@ public class Menu {
             opcion = entrada.nextInt();
             switch (opcion) {
                 case 1:
-                    /*Calculadora c = new Calculadora();
-               c.calculadora();*/
+                    calculadora c = new calculadora();
+                    c.iniciarCalculadora();
                     System.out.println("Calculadora");
                     break;
                 case 2:
@@ -36,8 +37,11 @@ public class Menu {
                     System.out.println("Gestor de notas");
                     break;
                 case 3:
-                    /*Adivina n = new Adivina();
-               n.adivina();*/
+                    //Crea una instancia del juego con un rango inicial (por ejemplo del 1 al 10)
+                    AdivinarNumero juego = new AdivinarNumero(1, 10);
+
+                    //Llama al menú del juego
+                    juego.menu();
                     System.out.println("Adivina el numero");
                     break;
                 case 4:

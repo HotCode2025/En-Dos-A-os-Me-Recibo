@@ -36,7 +36,7 @@ class Orden{
     return 5;
    }
 
-   constructor(){
+   constructor(){ // Constructor de la clase Orden
 
     if (Orden.contadorOrdenes < 2){ // Con el if condicionamos el numero de crecion de productos
         this._idOrden = ++Orden.contadorOrdenes;
@@ -49,7 +49,7 @@ class Orden{
    
    //Metodos de la clase Orden
    agregarProducto(producto){
-    if (this._productos.length < Orden.MAX_PRODUCTOS){
+    if (this._productos.length < Orden.MAX_PRODUCTOS){ 
         this._productos.push(producto);
     }
     else{
@@ -58,7 +58,7 @@ class Orden{
 
    }
 
-    calcularTotal(){
+    calcularTotal(){ // Este es el metodo que calcula el total de la orden
     let totalVenta = 0;
     for (let producto of this._productos){
         totalVenta += producto.precio;
@@ -104,6 +104,3 @@ orden2.agregarProducto(producto5);
 // orden2.agregarProducto(producto6); // Este no debería agregarse PORQUE supera el límite
 orden2.mostrarOrden();
 // let orden3 = new Orden(); // Esta no debería crearse PORQUE supera el límite
-
-
-        
