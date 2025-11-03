@@ -615,3 +615,191 @@ Segundo Semestre Parte 7:
 Revisar y ejecutar cada comando, hacerlo como practica: NO olvidar hacer lo requerido por el Tutor Nico, lo que sea tarea o investigación.
 
 Profesor Ariel Betancud
+
+
+CLASE 09 MIÉRCOLES 8 DE OCTUBRE DEL 2025 - Portafolio 9
+
+
+
+
+
+
+Configurar múltiples colaboradores en un repositorio de GitHub
+
+Por defecto, cualquier persona puede clonar o descargar tu proyecto desde GitHub, pero no pueden crear commits, ni ramas. Esto quiere decir que pueden copiar tu proyecto pero no colaborar con él, si este es publico, de otra manera, osea, si es privado es necesario que realmente estes haciendo una invitación, sino no lo van a poder ver. Existen varias formas de solucionar esto para poder aceptar contribuciones. Una de ellas es añadir a cada persona de nuestro equipo como colaborador de nuestro repositorio.
+
+
+Cómo agregar colaboradores en Github
+Solo debemos entrar a la configuración de colaboradores de nuestro proyecto. Se encuentra en:
+
+Repositorio > Settings > Collaborators
+Ahí, debemos añadir el email o username de los nuevos colaboradores.
+
+
+
+
+
+
+Si, como colaborador, agregaste erróneamente el mensaje del commit, lo puedes cambiar de la siguiente manera:
+
+Hacer un commit con el nuevo mensaje que queremos, esto nos abre el editor de texto de la terminal:
+
+git commit —amend #Corregimos el mensaje
+git pull origin main #Traer el repositorio remoto
+git push --set-upstream origin main #Ejecutar el cambio, el error arreglado
+
+Comienzo del colaborador
+cd Documentos #Abre git bash
+mkdir class-git #Crea la carpeta o directorio de trabajo
+ls -al #Revisa lo que va haciendo, los archivos o directorios que tiene
+# 1. No debe hacer un git init, debe buscar el repositorio en el cual esta invitado a participar, por supuesto en GitHub.
+# 2. Pasa a clonar desde HTTPS, copiar la url, esto es porque no se arranca el proyecto desde cero, se esta uniendo otro colaborador.
+# 3. En git bash ponemos el siguiente comando.
+git clone url-copiada-github #Esto hace que clonemos el repositorio
+# 4. No pide ni usuario ni contraseña si el repositorio es publico.
+code . #Abre VSC y comienza con cambios, o abre el siguiente comando para hacer modificaciones
+vim historia.txt #Vamos a escribir: Aquí esta un nuevo colaborador
+vim escribimos el mensaje del commit #Esto en Ubuntu
+ctrl + x
+s #Para un si 
+enter #Terminado el mensaje del commit
+vim escribimos el mensaje del commit #Esto en git bash window
+esc #Presionamos escaner luego de terminar de escribir
+:wq! #Para salir del editor vim en window
+git status
+git commit -am "Mi primer commit, estoy muy emocionado!!!"
+git pull origin main
+git fetch
+gti branch #Para ver las ramas que se trajo, no se trae sino solo main, si hay mas debes crearlas local
+git log #Para ver toda las historia
+git log --graph #Vemos el grafico de las diferentes ramas y del commit que acabamos de hacer que esta en el main, Git es una base de datos de toda las historia de todo lo que se ha hecho
+git push origin main #Va a pedir un email que será el del colaborador, su contraseña.
+# 5. Nos trae un denegado, ¿Por qué? Porque en el proceso de abordaje el jefe no le dio acceso: el dueño del repositorio no le agregó dandole acceso.
+# 6. Ir a settings del repositorio, veremos la opsión Collaborators, agregamos el correo o nombre de usuario: el colaborador debe tener un email publico y visible o de otra manera debera ser con el nombre de usuario publico: ingresar el username y debe ir como colaborador.
+# 7. Se puede enviar un email con la url, pero ya GitHub envia una notificación al usuario de invitado, es una cosa que debemos empezar a consultar y revisar.
+# 8. El colaborador debe aceptar la invitación, una vez hecho eso ya tendrá total acceso para hacer push al repositorio.
+git pull origin main
+git push origin main #Colocar nombre de usuario y contraseña, listo
+# 9. El dueño del repositorio no ve los cambios, ¿Qué hacer?
+git pull origin main
+git fetch
+git log --stat #Se verá claro que el colaborador ingreso su primer commit
+# 10. A partir de ahora el dueño del repositorio y el colaborador deberán repartir el trabajo, esto se hace con distintas ramas de trabajo: el dueño trabajará desde la rama header y el colaborador desde la rama footer, al final cuando se termine, se hara un merge para terminar el proyecto.
+
+
+PORTAFOLIO
+
+
+Vamos a ver unos videos de como avanzar en lo que es un portafolio por el Tutor:
+
+Dante Nicolás Martinez
+
+Segundo Semestre Parte 8:
+
+<a href="https://drive.google.com/file/d/1e55H586Q_-znRiJHl7jSuJTud-UVf-ZX/view?usp=drive_link">
+  Video Capitulo 08
+</a>
+
+<a href="https://drive.google.com/file/d/1Pa8KQK65csbgLEI_BAd2AOdonDarsLBU/view?usp=drive_link">
+  PDF
+</a>
+
+
+
+Revisar y ejecutar cada comando, hacerlo como practica: NO olvidar hacer lo requerido por el Tutor Nico, lo que sea tarea o investigación.
+
+Profesor Ariel Betancud
+
+
+CLASE 10 MIÉRCOLES 15 DE OCTUBRE DEL 2025 - Portafolio 10
+
+
+Flujo de trabajo profesional
+
+Haciendo merge de ramas de desarrollo a main
+
+
+Para poder desarrollar software de manera óptima y ordenada, necesitamos tener un flujo de trabajo profesional, que nos permita trabajar en conjunto sin interrumpir el trabajo de otros desarrolladores.
+
+Una buena práctica de flujo de trabajo sería la siguiente:
+
+Crear ramas
+Asignar una rama a cada programador
+El programador baja el repositorio con git pull origin master
+El programador cambia de rama
+El programador trabaja en esa rama y hace commits
+El programador sube su trabajo con git push origin #nombre_rama
+El encargado de organizar el proyecto baja, revisa y unifica todos los cambios
+
+
+
+PORTAFOLIO
+
+
+Vamos a ver unos videos de como avanzar en lo que es un portafolio por el Tutor:
+
+Dante Nicolás Martinez
+
+Segundo Semestre Parte 9:
+
+<a href="https://drive.google.com/file/d/1Z80SxVKmkzhzVY5hIxTDtWjHfryHgt1J/view?usp=drive_link">
+  Video Capitulo 09
+</a>
+
+<a href="https://drive.google.com/file/d/1SwPO2PrveW0DRGXyfzKD9yYWeKJUlCkm/view?usp=drive_link">
+  PDF
+</a>
+
+
+
+
+Revisar y ejecutar cada comando, hacerlo como practica: NO olvidar hacer lo requerido por el Tutor Nico, lo que sea tarea o investigación.
+
+Profesor Ariel Betancud
+
+
+
+CLASE 11 MIÉRCOLES 22 DE OCTUBRE DEL 2025 - Portafolio 11
+
+
+
+
+
+
+
+Flujo de trabajo profesional -> Archivos binarios
+
+Las imagenes cargandolas en el repositorio, representan un problema: porque las imagenes son pesadas, y si la subimos al repositorio, siempre que hagamos cambios, vamos a estar trayendo la imagen siempre, estas imagenes son binarios para GitHub, mientras mas binarios carguemos, más pesado va a ser el repositorio, algo que no es parte de las buenas practicas.
+
+
+Otra cosa muy importante a tener en cuenta, es que en cada commit que hagamos hay un tamaño predefinido para la carga, este no lo podemos superar o no podremos subir los commits, el tamaño es 100 mb, si acoplamos un archivo binario en un commit que pese mas de esto, será un problema, no nos dejará seguir commiteando, porque siempre seguirá arrastrando el archivo binario.
+
+
+
+
+
+
+PORTAFOLIO
+
+
+Vamos a ver unos videos de como avanzar en lo que es un portafolio por el Tutor:
+
+Dante Nicolás Martinez
+
+Segundo Semestre Parte 10:
+
+<a href="https://drive.google.com/file/d/14Ykgp8zJcjjuZlg_JSFiwmjeIT7qUt27/view?usp=drive_link">
+  Video Capitulo 10
+</a>
+
+<a href="https://drive.google.com/file/d/1RTKm9QSD_ylnDD3Q719lYqhlYW48cOHe/view?usp=drive_link">
+  PDF
+</a>
+
+
+
+
+
+Revisar y ejecutar cada comando, hacerlo como practica: NO olvidar hacer lo requerido por el Tutor Nico, lo que sea tarea o investigación.
+
+Profesor Ariel Betancud
