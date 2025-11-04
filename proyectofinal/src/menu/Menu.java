@@ -60,7 +60,7 @@ public class Menu {
                     System.out.println("Opcion incorrecta");
                     break;
             }
-            entrada.close();
+           
         }
     }
 
