@@ -3,6 +3,7 @@ import conversordeunidades.ConversorDeUnidades;
 import java.util.Scanner;
 import sistemaventas.SistemaVentas;
 import calculadora.calculadora;
+import gestornotas.GestorDeNotas;
 
 public class Menu {
 
@@ -34,6 +35,8 @@ public class Menu {
                 case 2:
                     /*GestorNotas g = new GestorNotas();
                g.gestor();*/
+                    GestorDeNotas g = new GestorDeNotas();
+                    g.iniciar();
                     System.out.println("Gestor de notas");
                     break;
                 case 3:
